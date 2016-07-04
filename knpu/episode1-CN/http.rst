@@ -1,19 +1,15 @@
-HTTP Basics
+HTTP 基础
 ===========
 
-Yep, we need cover a bit of theory. Wait, come back! This stuff is *super*
-important and *fascinating* too. Put on your thinking cap and let's
-get to it!
+是的 我们需要一些理论知识。等等，回来！这里的知识超重要，但同样吸引人。集中精力，我们投入其中。
 
 HTTP
 ----
 
-Everything starts with HTTP: the acronym that describes the format of the
-request message that a client sends and the response that our server sends
-back. If you think of an API like a function, the request is the input and
-the response is our output. It's that simple.
+一切都从HTTP开始：这几个缩写字母描述的是一个客户端请求信息并从服务器返回信息的格式。如果你认为API就像一个功能，
+request就像输入，response就像输出，很简单的道理。
 
-HTTP Request
+HTTP 请求
 ~~~~~~~~~~~~
 
 .. code-block:: text
@@ -22,22 +18,20 @@ HTTP Request
     Host: CodeBattles.io
     Accept: application/json,text/html
 
-This is a basic request and it has 3 important pieces:
+这是基础的请求，它包含3个重要部分：
 
-1. ``/api/programmers`` is the URI: uniform resource identifier. I said
-   **resource**! Each URI is a unique address to a resource, just like you
-   have a unique address to your house. If you have 5 URI's you're saying
-   you have 5 resources.
+1. ``/api/programmers`` 是URI: uniform resource identifier. 这里提到了
+   **resource**! 每个URI都是一个资源唯一的地址，就像你的房子只有一个唯一的住址一样。
+   如果你有5个URI，那就意味着5个资源。
 
-2. ``GET`` is the HTTP method and describes what *action* you want to take
-   against the resource. You already know about GET and POST, and possibly
-   also DELETE, PUT and the infamous PATCH. There are others, but mostly
-   we don't care about those.
+2. ``GET`` 是HTTP方法，用来描述你想通过什么动作来操作资源。你应该已经知道GET和POST了，还有其他类似DELETE, 
+PUT和臭名昭著的PATCH. 还有一些其他的，估计你也就不感兴趣了。
 
-3. Every line after the first is just a colon-separated list of headers.
-   This request only has two, but a client could send anything.
+3. 头信息里第一行后的每一行都是冒号分隔的列表。这个请求只有两行，但客户端可以发送任何信息。
 
 With that in mind, a POST request might look like this:
+
+心里想着这些，一个POST请求可能长这样：
 
 .. include:: includes/_post_programmer.rst.inc
 
@@ -45,10 +39,18 @@ It's the same, except the method is POST and we're sending data in the body
 of the request. We also have 2 extra headers, one for authentication and
 one that tells the server that the body has JSON-formatted stuff in it.
 
+这是一样的，除了方法使用了POST，我们从这次请求的body正在发送数据。我们还有两个额外的头信息，
+一个是作者，一个告诉服务器body里有JSON格式的信息。
+
 HTTP Response
 ~~~~~~~~~~~~~
 
+HTTP 响应
+~~~~~~~~~~~~~
+
 The response message is similar:
+
+返回信息类似：
 
 .. code-block:: text
 
@@ -72,3 +74,10 @@ shouldn't be cached. And of course, the JSON body is at the end.
 
 HTTP is awesome and really simple. Got it? Great, let's move onto something
 harder.
+
+这个状态代码200是第一个重要的部分，意思是一切都运转正常。状态编码是API的重要部分。
+同时也是人们争论的焦点。我们将看到我们是怎么创建这个重要部分的。
+
+头信息告诉客户端返回的是JSON，返回结果不应该被缓存。当然JSON的主体在末尾。
+
+HTTP非常赞，而且真的很简单。学会了吗？好，咱们开始些更难的。
