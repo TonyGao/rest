@@ -1,0 +1,114 @@
+title:  RESTful APIs in the Real World Course 1
+summary: |
+    Making RESTful APIs is hard, really hard. There are a lot of concepts
+    to know - resources, representations, HTTP methods, status codes, etc.
+
+    And putting this all to life in a sane way in PHP is no small task. In
+    this course, we'll learn all the most fundamental concepts around REST
+    and learn about the "rules" and the advantages and disadvantages of each.
+    And we'll of course build a real API to show it all off. Topics include:
+
+    * HTTP basics
+    * Resources and Representations
+    * Resource state, client state
+    * GET, POST, PUT, PATCH, DELETE
+    * Idemptotency and safe methods
+    * Proper Status Codes, Location header and Content-Type
+    * Testing your API
+    * RFCs and where the "rules" come from
+    * Advanced error and validation handling
+
+    If you want to know about Hypermedia, HATEOAS, Documenting your API,
+    Content-Type negotiation, pagination and more, these are **not** covered
+    here, but will be covered in [Episode 2](/screencast/rest-ep2) and
+    [Episode 3](http://knpuniversity.com/screencast/rest-ep3).
+
+illustration: rest.png
+tuts_hero:
+    finish_step: "Errors: Making type a URL"
+
+chapters:
+    intro:
+        is_free:    true
+        video_key:  140181413
+    http:
+        is_free:    true
+        video_key:  140181410
+    rest:
+        is_free:    true
+        video_key:  140181415
+    client-state:
+        is_free:    true
+        video_key:  140181414
+    project-routing:
+        is_free:    true
+        video_key:  140181411
+    post:
+        is_free:    true
+        video_key:  140181412
+    get:
+        is_free:    false
+        video_key:  140181418
+    location-header:
+        is_free:    false
+        video_key:  140181417
+    get-collection:
+        is_free:    false
+        video_key:  140181416
+    rfcs:
+        is_free:    false
+        video_key:  140181419
+    testing-phpunit:
+        is_free:    false
+        video_key:  140182129
+    testing:
+        is_free:    false
+        video_key:  140182128
+    testing-data:
+        is_free:    false
+        video_key:  140182133
+    put-editing:
+        is_free:    false
+        video_key:  140182130
+    debugging-tests:
+        is_free:    false
+        video_key:  140182132
+    put-improvements:
+        is_free:    false
+        video_key:  140182131
+    different-representations:
+        is_free:    false
+        video_key:  140182134
+    put-versus-post:
+        is_free:    false
+        video_key:  140182135
+    delete:
+        is_free:    false
+        video_key:  140182139
+    patch:
+        is_free:    false
+        video_key:  140182137
+    errors:
+        is_free:    false
+        video_key:  140182140
+    application-problem:
+        is_free:    false
+        video_key:  140182138
+    error-consistency:
+        is_free:    false
+        video_key:  140182142
+    error-invalid-json:
+        is_free:    false
+        video_key:  140182143
+    error-api-problem-exception:
+        is_free:    false
+        video_key:  140182144
+    error-404-json:
+        is_free:    false
+        video_key:  140182145
+    error-details:
+        is_free:    false
+        video_key:  140182146
+    whats-next:
+        is_free:    false
+        video_key:  140182148
