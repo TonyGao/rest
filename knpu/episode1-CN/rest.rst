@@ -23,6 +23,24 @@ Now that you understand resources, I want to think about representations.
 Suppose a client makes a GET request to ``/programmers/Namespacinator`` and
 gets back this JSON response:
 
+REST: 资源和表述
+================
+
+REST: Representational state transfer(表述性状态转移)。 这个著名术语是2000年由Roy Fielding在他的博士学位论文里创造的。论文很复杂，使得REST API难以实现的原因是需要理解和讨论很多规则，
+论文中限定了很多设计。
+
+当你提到API, 通常会想到它的终点，也就是URLs。 在REST里，如果你有一个URL，那么你就等于有一个资源。
+因此， ``/programmers/Namespacinator`` 或许就是指向单一程序员的地址，
+``/programmers`` 或许就是指向全部程序员的资源集合的地址。所以甚至一个程序员集合也是被视为一个资源。
+
+我们已经在web里创建过URLs了，没啥新鲜东西可说。
+
+表述
+---------------
+
+现在已经理解资源了，我想要认知下表述。假设一个客户端做了一个GET请求给 ``/programmers/Namespacinator``，
+并取得JSON的返回：
+
 .. code-block:: json
 
     {
@@ -38,10 +56,18 @@ ways, like in XML, HTML or even in JSON with a different format.
 
 The same applies when a client sends a request that contains programmer data:
 
+这是程序员资源，对吧？错，不对！
+
+这仅仅是程序员资源的表述。它由JSON来表现，服务器也可以用其他格式来表述程序员，如XML, HTML或者甚至用不同格式的JSON。
+
+当客户端以发送包含程序员数据的方式发送请求时也是同样的：
+
 .. include:: includes/_post_programmer.rst.inc
 
 The client doesn't send a programmer resource, it just sends a representation.
 The server's job is to interpret this representation and update the resource.
+
+客户端没发送一个程序员资源，只是发送了一个表述。服务器的任务就是解释这个表述并更新资源。
 
 Representation State
 --------------------
@@ -72,5 +98,22 @@ via representations.
 I know I know. We just took an easy idea and made it insane! But if you can
 understand *this* way of thinking, a lot of what you read about REST will
 start to make sense.
+
+表述状态
+--------
+
+确切的说这里其实是在表述web的工作原理。HTML页并不是一个资源，而只是一个表述。我们提交一个表单时，
+我们仅仅是发送一个不同的表述给服务器。
+
+一个资源可以有很多表述。我去，你疯了吗，弄一个API，用来将任意请求的资源表述成XML, JSON或HTML。
+我们确实够疯狂，就打算这么办。
+
+一个表述是可以让机器读懂的一个资源当前状态的解释说明。
+
+是的，我说资源的当前“状态”，这是另一个很重要但又让人迷惑的术语。 REST里所说的状态，或许你会简单的理解为任意资源的“数据”。 当客户端做了一个GET请求到 /programmer/Namespacinator, 返回的JSON就是它当前状态的一个表述，或者说当前数据。 如果一个客户端做了一个更新程序员的请求，客户端其实就是为了更新一个资源的“状态”而发送了一个表述。
+
+在REST的语言里，客户端和服务器交换资源表述，其反应的就是它们的当前状态或者渴望的状态。REST就是让两台机器通过表述转变资源状态的方法。
+
+明白，我明白，我们把简单的东西复杂化了！但如果你可以理解这种思维方式，你读的大部分关于REST的文章都会变得可以理解。
 
 .. _`Roy Fielding`: https://twitter.com/fielding
